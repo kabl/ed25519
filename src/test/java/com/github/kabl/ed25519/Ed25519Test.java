@@ -1,11 +1,11 @@
 package com.github.kabl.ed25519;
 
-import com.github.kabl.ed25519.openssh.KeyPair;
 import com.github.kabl.ed25519.openssh.SshKeyReader;
 import net.i2p.crypto.eddsa.EdDSAPrivateKey;
 import net.i2p.crypto.eddsa.EdDSAPublicKey;
 import net.i2p.crypto.eddsa.Utils;
 import org.junit.Test;
+
 import java.io.File;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;

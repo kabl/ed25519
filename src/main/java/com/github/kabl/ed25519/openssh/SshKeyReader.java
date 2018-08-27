@@ -1,5 +1,7 @@
 package com.github.kabl.ed25519.openssh;
 
+import com.github.kabl.ed25519.KeyPair;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;

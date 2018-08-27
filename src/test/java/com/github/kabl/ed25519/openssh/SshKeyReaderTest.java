@@ -1,5 +1,6 @@
 package com.github.kabl.ed25519.openssh;
 
+import com.github.kabl.ed25519.KeyPair;
 import net.i2p.crypto.eddsa.Utils;
 import org.junit.Test;
 import java.io.File;

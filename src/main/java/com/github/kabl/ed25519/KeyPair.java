@@ -1,4 +1,4 @@
-package com.github.kabl.ed25519.openssh;
+package com.github.kabl.ed25519;
 
 public class KeyPair {
 
