@@ -9,6 +9,14 @@ import java.security.MessageDigest;
 
 public class Ed25519 {
 
+    /**
+     * Verifies a signed message.
+     *
+     * @param publicKey 32 byte array public key.
+     * @param signature The signature.
+     * @param message The original message which was signed.
+     * @return true if the signature matches.
+     */
     public boolean verify(byte[] publicKey, byte[] signature, byte[] message) {
         EdDSAPublicKeySpec pubKey = new EdDSAPublicKeySpec(publicKey, Ed25519Util.SPEC);
         return verify(new EdDSAPublicKey(pubKey), signature, message);
@@ -26,6 +34,13 @@ public class Ed25519 {
         }
     }
 
+    /**
+     * Signs data.
+     *
+     * @param privateKey 32 byte array with the private key. Can be random 32 bytes.
+     * @param message Message to sign.
+     * @return The signed message.
+     */
     public byte[] sign(byte[] privateKey, byte[] message) {
         EdDSAPrivateKeySpec privKey = new EdDSAPrivateKeySpec(privateKey, Ed25519Util.SPEC);
         return sign(new EdDSAPrivateKey(privKey), message);

@@ -15,13 +15,15 @@ public class Ed25519Util {
     public static KeyPair generateByPassword(byte[] password) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
-            byte[] seed = md.digest(password);
-
-            EdDSAPrivateKeySpec privKey = new EdDSAPrivateKeySpec(seed, SPEC);
-
-            return new KeyPair(seed, privKey.getA().toByteArray());
+            byte[] privateKey = md.digest(password);
+            byte[] publicKey = privateToPublicKey(privateKey);
+            return new KeyPair(privateKey, publicKey);
         }catch (NoSuchAlgorithmException ex) {
             throw new RuntimeException(ex);
         }
+    }
+
+    public static byte[] privateToPublicKey(byte[] privateKey) {
+        return new EdDSAPrivateKeySpec(privateKey, SPEC).getA().toByteArray();
     }
 }
