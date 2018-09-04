@@ -1,6 +1,11 @@
 # Introduction
 Sign and verify library for ED25519 signature algorithm.
 
+ED25519 Properties
+- Private Key: 32 Byte
+- Public Key: 32 Byte
+- Signature: 64 Byte
+
 # How to use
 This library is built for developers which want simply generate signatures and validate signatures.
 
